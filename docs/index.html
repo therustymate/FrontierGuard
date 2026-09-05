@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" type="image/png" href="FrontierGuard.png">
+    <title>FrontierGuard</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3Q366EEH9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-H3Q366EEH9');
+    </script>
+    <meta name="google-site-verification" content="oOe73eClR48sAohmmOVpPSeZxaZVPZsvJHb_O2f8SCg"/>
+    <meta name="description" content="FrontierGuard is a Windows PE protector designed to enhance the security of executable files targeting the Windows x64 architecture through a multi-layered protection structure.">
+</head>
+<body>
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true"></div>
+            <div class="brand-text">
+                <div class="brand-name">FrontierGuard</div>
+                <div class="brand-sub">Open Source x64 Windows PE Protector</div>
+            </div>
+        </div>
+
+        <nav class="nav" aria-label="Section Navigation">
+            <a class="nav-link is-active" href="#home">Home</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#features">Features</a>
+            <a class="nav-link" href="#contributors">Contributors</a>
+            <a class="nav-link" href="#references">References</a>
+            <a class="nav-link" href="#release">Release</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="hint"><div>© <span id="year"></span> FrontierGuard</div></div>
+        </div>
+    </aside>
+
+    <main class="main">
+        <section id="home" class="section hero">
+            <div class="hero-grid">
+                <div class="hero-left reveal">
+                    <div class="kicker">
+                        <span class="dot"></span>
+                        Project FrontierGuard
+                    </div>
+                    <h1 class="title">
+                        FrontierGuard
+                        <span class="title-glow" aria-hidden="true"></span>
+                    </h1>
+                    <p class="desc">
+                        FrontierGuard is a Windows PE protector designed to enhance the runtime security of executable files 
+                        targeting the Windows x64 architecture through a multi-layered protection structure. 
+                        It operates alongside the protected application at runtime, 
+                        applying practical security techniques to help defend against 
+                        reverse engineering, code analysis, and unauthorized modification.
+                    </p>
+
+                    <div class="cta-row">
+                        <a class="btn primary" href="#release">Latest Release</a>
+                        <a class="btn ghost" href="#features">Explore Features</a>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-num">03</div>
+                            <div class="stat-label">Pre-Execution Guards</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">06</div>
+                            <div class="stat-label">Runtime Guards</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">03</div>
+                            <div class="stat-label">Event Guards</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-num">03</div>
+                            <div class="stat-label">Prevention Guards</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right reveal">
+                    <div class="tilt-wrap" aria-label="3D Visual Card">
+                        <div class="tilt-card">
+                            <div class="card-shine" aria-hidden="true"></div>
+                            <div class="card-inner">
+                                <div class="chip" aria-hidden="true">
+                                </div>
+
+                                <div class="card-caption">
+                                    <div class="cap-title">Open Source x64 Windows PE Protector</div>
+                                    <div class="cap-sub">Windows • x64 • PE • Protector</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="floating-tags" aria-hidden="true">
+                        <span class="tag">PE</span>
+                        <span class="tag">Protector</span>
+                        <span class="tag">Anti-RE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title">About FrontierGuard</h2>
+            </div>
+            <div class="cards reveal">
+                <article class="card">
+                    <h3>Aim</h3>
+                    <p>
+                        FrontierGuard provides runtime-focused memory protection for 
+                        Windows applications against reverse engineering (debuggers, virtual machines), 
+                        malicious memory operations (injecting, hijacking, dumping), and runtime manipulation.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Approach</h3>
+                    <p>
+                        FrontierGuard adopts a multi-layered, real-time protection architecture to 
+                        significantly increase the cost and complexity of reverse engineering 
+                        through a combination of obfuscation, runtime guards, and other advanced techniques.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Scope</h3>
+                    <p>
+                        The scope of this project is limited to usermode Windows PE files. 
+                        Kernel components, firmwares, drivers, non-PE formats (Linux/macOS), and 
+                        attacks originating from higher privileges (kernel driver, hypervisor, etc.)
+                        are explicitly out of scope.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="features" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title">Features</h2>
+            </div>
+            <h2 class="reveal">Startup Guards</h2>
+            <p class="reveal feature-sub">
+                Pre-Execution guards are designed to protect the applicaton before it is executed, preventing early analysis and tampering attempts.
+                Few of these guards will enable stronger protections upon detection of analysis attempts.
+            </p>
+            <div class="feature-grid reveal">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Anti-VM</h3>
+                    <div class="feature-description">
+                        Detects virtual environments and enables event guards in case of analysis attempts.
+                    </div>
+                    <ol class="feature-procedure">
+                        <li>Enables  </li>
+                    </ol>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <h3>ProxyGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized static IAT hooking and DLL proxying attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                    <h3>ExitGuard</h3>
+                    <div class="feature-description">
+                        Ensures the protected process can be safely terminated on a critical situation.
+                    </div>
+                    <ol class="feature-procedure">
+                        <li></li>
+                    </ol>
+                </div>
+            </div>
+
+            <h2 class="reveal">Runtime Guards</h2>
+            <p class="reveal feature-sub">
+                Runtime guards are designed to protect the application during execution, preventing runtime analysis and tampering attempts.
+            </p>
+            <div class="feature-grid reveal">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-bug-slash"></i></div>
+                    <h3>DebugGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized debugger attachment and breakpoints attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3>ThreadGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized thread creation, suspension, and manipulation attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-syringe"></i></div>
+                    <h3>LibGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized runtime DLL injection, unloading, and stomping attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3>ProcessGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized child process creation attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3>IntegrityGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized dynamic memory modifications and code tampering attempts.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-fingerprint"></i></div>
+                    <h3>APCGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized APC (Asynchronous Procedure Call) injection and manipulation attempts.
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="reveal">Event Guards</h2>
+            <p class="reveal feature-sub">
+                EventGuards are designed to protect the application by "responding" to security-sensitive events.<br>
+                This will not prevent the events from occurring, but will instead respond to neutralize the attack or 
+                terminate the protected process.
+            </p>
+            <div class="feature-grid reveal">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-radiation"></i></div>
+                    <h3>ExploitGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized network connection, memory corruption, and code execution attempts.
+                    </div>
+                    <ol class="feature-procedure">
+                        <li>Neutralizes the exploit by terminating the memory region.</li>
+                        <li>Terminates the protected process upon failure to neutralize the exploit.</li>
+                    </ol>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-user-secret"></i></div>
+                    <h3>MemoryGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized memory operations that bypassed the runtime guards.
+                    </div>
+                    <ol class="feature-procedure">
+                        <li>Neutralizes the unauthorized memory operation by terminating the memory region.</li>
+                        <li>Terminates the protected process upon failure to neutralize the child process.</li>
+                    </ol>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                    <h3>HeartbeatGuard</h3>
+                    <div class="feature-description">
+                        Manages the health of the guards and recovers upon failure to maintain the protections.
+                    </div>
+                    <ol class="feature-procedure">
+                        <li>Recovers the protections and restores the original state.</li>
+                        <li>Terminates the protected process upon failure to recover the protections.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h2 class="reveal">Prevention Guards</h2>
+            <p class="reveal feature-sub">
+                Prevention guards are designed to completely disable or prevent additional operations to protect the application.<br>
+                This is a more aggressive approach to security, as it limits the functionality of the protected process (disabled by default).<br>
+            </p>
+            <div class="feature-grid reveal">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-wifi"></i></div>
+                    <h3>NetworkGuard</h3>
+                    <div class="feature-description">
+                        Disable all network operations for the protected process when enabled.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-file"></i></div>
+                    <h3>FileGuard</h3>
+                    <div class="feature-description">
+                        Detects and responds to unauthorized access or modification of files associated with the protected process.
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fa-solid fa-ban"></i></div>
+                    <h3>ACGuard</h3>
+                    <div class="feature-description">
+                        Enables ACG (Arbitrary Code Guard) policy for the protected process.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contributors" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title">Contributors</h2>
+            </div>
+
+            <div class="table-wrap reveal" role="region" aria-label="Contributors List">
+                <div class="table">
+                    <div class="row header">
+                        <div>Name</div>
+                        <div>Role</div>
+                        <div>Focus</div>
+                    </div>
+                    <div class="row">
+                        <div><a href="https://github.com/therustymate" target="_blank">@therustymate</a> (Owner)</div>
+                        <div>Maintainer</div>
+                        <div>Research & Development</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </section>
+
+        <section id="references" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title reveal">References</h2>
+            </div>
+            <div class="references reveal">
+                <ul class="list">
+                    <li><i class="fa-solid fa-link"></i><a href="https://zydis.re/">Zydis | The ultimate, open-source X86 & X86-64 decoder/disassembler library.</a></li>
+                    <li><i class="fa-solid fa-link"></i><a href="https://github.com/frank2/packer-tutorial?tab=readme-ov-file#what-is-a-packer">packer-tutorial | Windows C++ Packer Development Tutorial</a></li>
+                    <li><i class="fa-solid fa-link"></i><a href="https://www.youtube.com/watch?v=KzD_nc5B_8w">YouTube | How to Detect Threads & Bypass Anti-Cheat Detection</a></li>
+                    <li><i class="fa-solid fa-link"></i><a href="https://kylehalladay.com/blog/2020/11/13/Hooking-By-Example.html">X64 Function Hooking by Example</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="release" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title">Release</h2>
+            </div>
+
+            <div class="release-grid reveal">
+                <div class="release-card">
+                    <div class="release-badge">In Development</div>
+                    <h3>Latest Build</h3>
+                    <p>N/A</p>
+                    <div class="release-actions">
+                        <button class="btn primary" type="button">Download</button>
+                        <button class="btn ghost" type="button">Changelog</button>
+                    </div>
+                </div>
+
+                <div class="release-card">
+                    <div class="release-badge subtle">Notes</div>
+                    <ul class="bullets">
+                        <li>ThreadGuard Beta (2026-02/09-12:59 PM NZD)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="section-head reveal">
+                <h2 class="section-title">FrontierGuard Community</h2>
+            </div>
+
+            <div class="reveal">
+                <a class="social-card" href="https://gitlab.com/FrontierGuard" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-gitlab"></i>
+                    <div class="social-meta">
+                        <div class="social-title">GitLab</div>
+                        <div class="social-sub">FrontierGuard Group</div>
+                    </div>
+                </a>
+
+                <br>
+
+                <a class="social-card" href="https://discord.gg/9GTmdGzDHG" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-discord"></i>
+                    <div class="social-meta">
+                        <div class="social-title">Discord</div>
+                        <div class="social-sub">FrontierGuard Community</div>
+                    </div>
+                </a>
+                <br><hr>
+            </div>
+
+            <h2 class="reveal">Maintainer Contact</h2>
+            <div class="contact-social reveal">
+                <a class="social-card" href="https://github.com/therustymate" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-github"></i>
+                    <div class="social-meta">
+                        <div class="social-title">GitHub</div>
+                        <div class="social-sub">@therustymate</div>
+                    </div>
+                </a>
+
+                <a class="social-card" href="https://twitter.com/therustymate" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-x-twitter"></i>
+                    <div class="social-meta">
+                        <div class="social-title">X (Twitter)</div>
+                        <div class="social-sub">@therustymate</div>
+                    </div>
+                </a>
+
+                <a class="social-card" href="https://gitlab.com/therustymate" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-gitlab"></i>
+                    <div class="social-meta">
+                        <div class="social-title">GitLab</div>
+                        <div class="social-sub">@therustymate</div>
+                    </div>
+                </a>
+
+                <a class="social-card" href="mailto:therustymate@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="social-meta">
+                        <div class="social-title">Email</div>
+                        <div class="social-sub">therustymate@gmail.com</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
